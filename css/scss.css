@@ -11,9 +11,9 @@ html, body {
   flex-wrap: wrap;
   width: 100vw;
   height: 100vh; }
-  #signageContainer video {
-    width: 100%    !important;
-    height: auto   !important; }
+
+video {
+  height: 100% !important; }
 
 .templateQuarti {
   width: 50vw;
@@ -22,32 +22,19 @@ html, body {
   align-items: center;
   justify-content: center;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  font-size: 150%;
+  text-transform: uppercase; }
 
 #code {
   background: #fff; }
+  #code #numeroServito {
+    font-size: 30vh;
+    display: block;
+    text-align: center; }
 
 #streamingNews {
   background: indianred; }
 
 #slideshow {
   background: greenyellow; }
-
-
-
-/* SLIDESHOW ANIMATION */
-
-// USAGE            
-@include vertical-slider(
-  $placeholder-name: slide-vertical,
-  $height: 200px,
-  $slides: 4,
-  $easing: ease-in-out,
-  $slide-duration: 5,
-  $trans-duration: 2
-);
-  
-.slider {
-  // extend generated placeholder                     
-  @extend %slide-vertical;   
-}

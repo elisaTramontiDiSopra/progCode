@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Media Player Digital Signage</title>
+        
+        <link href="css/dueRigheTreColonne.css" rel="stylesheet" type="text/css" />
+        <link rel="manifest" href="manifest.json">
+        
+        <script src="variabili.js"></script>
+        
+        <!-- PUSH NOTIFICATIONS -->
+        <script src="js/main.js"></script> <!-- SEND REGISTRATION ID TO DATABASE -->   
+        <!-- PUSH NOTIFICATIONS -->
+
+
+        <!-- THESE FILES ARE ONLY REQUIRED FOR THE CURRENT EXAMPLE -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>  
+
+    </head>
+
+<body>
+<div id="signageContainer">
+    
+    <div id="rigaSuperiore" class="riga">
+        <div id="info"></div>
+        <div id="bannerStudio"></div>
+    </div>
+    
+    <div id="rigaInferiore" class="riga">
+        <div id="studioUno" class="colonnaStudio">
+        <div class="intestazioneColonna uno">
+            <h3>Dentista</h3>
+            <p>Stiamo servendo il numero: <span id="servitoStudioUno" class="numeroServito"></span></p></div>       
+        </div>
+        
+        <div id="studioDue" class="colonnaStudio">
+            <div class="intestazioneColonna due">
+                <h3>Pediatra</h3>
+                <p>Stiamo servendo il numero: <span class="numeroServito"></span></p></div>       
+        </div>
+        
+        <div id="studioTre" class="colonnaStudio">
+            <div class="intestazioneColonna tre">
+                <h3>Oculista</h3>
+                <p>Stiamo servendo il numero: <span id="servitoStudioTre" class="numeroServito"></span></p></div>       
+        </div>
+    </div>
+
+    
+    
+    
+</div>
+
+</div>
+
+</body>
+</html>
