@@ -1,0 +1,53 @@
+html, body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: black; }
+
+#signageContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100vw;
+  height: 100vh; }
+  #signageContainer video {
+    width: 100%    !important;
+    height: auto   !important; }
+
+.templateQuarti {
+  width: 50vw;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0; }
+
+#code {
+  background: #fff; }
+
+#streamingNews {
+  background: indianred; }
+
+#slideshow {
+  background: greenyellow; }
+
+
+
+/* SLIDESHOW ANIMATION */
+
+// USAGE            
+@include vertical-slider(
+  $placeholder-name: slide-vertical,
+  $height: 200px,
+  $slides: 4,
+  $easing: ease-in-out,
+  $slide-duration: 5,
+  $trans-duration: 2
+);
+  
+.slider {
+  // extend generated placeholder                     
+  @extend %slide-vertical;   
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Media Player Digital Signage</title>
+        
+        <link href="css/scss.css" rel="stylesheet" type="text/css" />
+        <style type="text/css">
+            marquee#text0 { position: fixed; top:    0px; left: 0px; width: 100%; color: white; background-color: blue; font-size: 30px; }
+            marquee#text1 { position: fixed; bottom: 0px; left: 0px; width: 100%; color: white; background-color: red;  font-size: 30px; }
+        </style>
+
+<!-- FIREBASE -->
+<script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+<script src='https://cdn.firebase.com/js/simple-login/1.6.4/firebase-simple-login.js'></script>
+<!-- FIREBASE -->
+
+<script type="text/javascript" src="scripts/firebaseFunctions.js"></script>
+</head>
+
+<body>
+<div id="signageContainer">
+    
+    <div id="code" class="templateQuarti">
+        <div id="studioUno" class="servitoStudio">Stiamo servendo il numero: <span id="numeroServito"></span></div>
+    </div>
+    
+    <div id="streamingNews" class="templateQuarti">
+        <div id="studioUno" class="servitoStudio">Qui andrà lo streaming o una foto o comunque qualche contenuto </div>
+    </div>
+    
+    <div id="slideshow" class="templateQuarti">
+        <div>Qui ci va uno slideshow </div>
+    </div>
+    
+    <div id="video" class="templateQuarti">
+        <video autoplay>
+            <source src="video/videoSigneage.mp4" />
+            <p>Unsupported</p>
+        </video>
+    </div>
+    
+</div>
+
+</div>
+
+</body>
+</html>

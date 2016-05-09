@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Totem</title>
+        
+        <link href="css/totemTouchScreen.css" rel="stylesheet" type="text/css" />        
+        <script src="js/totemTouchScreen.js"></script>
+       
+    </head>
+
+<body>
+<div id="studioContainer">
+    
+    <div id="studio01" class="colonnaStudio" data-value="1" onclick="recuperoUltimoNumeroCoda(this)">
+        <div class="prendiNumero">Prendi il numero</div>
+        <div class="studioPrenotazione"></div>  
+        <div class="info"></div>      
+    </div>
+    
+    <div id="studio02" class="colonnaStudio" data-value="1" onclick="recuperoUltimoNumeroCoda(this)">
+        <div class="prendiNumero">Prendi il numero</div>
+        <div class="studioPrenotazione"></div>        
+    </div>
+    
+    <div id="studio03" class="colonnaStudio" data-value="1" onclick="recuperoUltimoNumeroCoda(this)">
+        <div class="prendiNumero">Prendi il numero</div>
+        <div class="studioInfo">ORARI: <br /> 14.00 - 17.00 <br /> MEDICO: <br /> Dott. Cox</div>        
+    </div>
+    
+</div>
+
+</body>
+</html>

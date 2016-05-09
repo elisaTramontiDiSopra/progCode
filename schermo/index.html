@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Media Player Digital Signage</title>
+        
+        <link href="css/threeColumns.css" rel="stylesheet" type="text/css" />
+        <link rel="manifest" href="manifest.json">
+
+        <!-- FIREBASE 
+        <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+        <script src='https://cdn.firebase.com/js/simple-login/1.6.4/firebase-simple-login.js'></script>
+        <script type="text/javascript" src="scripts/firebaseFunctions_threeColumns.js"></script>
+        <!-- FIREBASE -->
+        
+        <script src="variabili.js"></script>
+        
+        <!-- PUSH NOTIFICATIONS -->
+        <script src="js/main.js"></script> <!-- SEND REGISTRATION ID TO DATABASE -->   
+        <!-- PUSH NOTIFICATIONS -->
+
+
+        <!-- THESE FILES ARE ONLY REQUIRED FOR THE CURRENT EXAMPLE -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>  
+
+    </head>
+
+<body>
+<div id="signageContainer">
+    
+    <div id="studioUno" class="colonnaStudio">
+        <div class="intestazioneColonna uno">
+            <h3>Dentista</h3>
+            <p>Stiamo servendo il numero: <span id="servitoStudioUno" class="numeroServito"></span></p></div>       
+    </div>
+    
+    <div id="studioDue" class="colonnaStudio">
+        <div class="intestazioneColonna due">
+            <h3>Pediatra</h3>
+            <p>Stiamo servendo il numero: <span class="numeroServito"></span></p></div>       
+    </div>
+    
+    <div id="studioTre" class="colonnaStudio">
+        <div class="intestazioneColonna tre">
+            <h3>Oculista</h3>
+            <p>Stiamo servendo il numero: <span id="servitoStudioTre" class="numeroServito"></span></p></div>       
+    </div>
+    
+    
+    <div class="colonnaAdvertisment">
+        <div id="slideshow" class="ads">
+            <div>
+                <h2>Lo studio segue i seguenti orari</h2>
+                <p>lunedi - venerdi</p>
+                <p>09.00 - 12.30 e 14.00 - 17.00</p>
+                <p>sabato</p>
+                <p>09.00 - 12.30</p>
+            </div>
+        </div>
+        
+        <!-- <div id="video">
+            <video autoplay>
+                <source src="video/videoSigneage.mp4" />
+                <p>Unsupported</p>
+            </video>
+        </div> -->
+    </div>
+    
+</div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+$colorOne: #2D3E50;
+$colorTwo: #FC4349;
+$colorThree: #6DBCDB;
+$sfondoColonna: #D6DADB;
+$coloreTestoIntestazioneColonne:#fff;
+
+
+html, body {
+    width: 100vw; 
+    height: 100vh; 
+    margin: 0; 
+    padding: 0;
+    font-family: sans-serif;
+}
+p {
+    font-size: 80%;
+    margin: 0; 
+    padding:0;
+}
+#signageContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100vw;
+    height: 100vh;
+}
+
+.colonnaStudio {
+    width: 22vw;
+    height: 100vh;
+}
+.intestazioneColonna {
+    height: 15vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+    padding: 8%;
+    font-size: 120%;
+    text-transform: uppercase;
+    text-align: center;
+    color: $coloreTestoIntestazioneColonne;
+    h3 {
+        display: block;
+        text-align: center;
+        font-weight: bold;
+        width: 100%;
+        margin: 0;
+    }
+}
+.uno {
+        background-color: $colorOne;
+    }
+.due {
+        background-color: $colorTwo;
+    }
+.tre {
+        background-color: $colorThree;
+  }  
+   
+#studioUno {
+    background: url("../img/studioUno.png") no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+#studioDue {
+    background: url("../img/studioDue.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+#studioTre {
+    background: url("../img/studioTre.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.numeroServito {
+    font-size: 400%;
+    display: block;
+    text-align: center;
+}
+
+.colonnaAdvertisment {
+    width: 34vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: $sfondoColonna;
+}
+
+#slideshow{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+video {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
