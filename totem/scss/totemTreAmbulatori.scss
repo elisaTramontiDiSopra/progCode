@@ -1,0 +1,30 @@
+@import '../../scss/variabiliGlobali';
+
+body{
+    background: $coloreSfondo;
+}
+
+
+#studioContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.ambulatorio {
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+#ambulatorio01 {
+    @extend .ambulatorio;
+    background-color: $colorePrimario;
+}
+
+#ambulatorio02 {
+    @extend .ambulatorio;
+    background-color: darken ($colorePrimario, 10%);
+}

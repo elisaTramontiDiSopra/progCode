@@ -1,0 +1,8 @@
+body {
+  background: #17a6b6; }
+
+#studioContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }

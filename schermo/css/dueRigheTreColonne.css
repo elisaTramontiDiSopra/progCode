@@ -28,38 +28,76 @@ body {
   flex-direction: row; }
 
 #bannerStudio {
-  background-color: #751212;
   flex-grow: 2;
   background: url("../img/bannerStudioBG.jpg") no-repeat fixed;
   background-size: cover;
   display: flex;
   justify-content: center;
-  align-items: center; }
-  #bannerStudio #loghetto {
-    content: '/f0f1'; }
+  align-items: center;
+  flex-direction: row; }
   #bannerStudio p {
     color: white;
-    font-size: x-large; }
+    margin: 0; }
 
-.sottotitolo {
+#loghetto {
+  content: '\f0f1';
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  color: #17a6b6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 300%;
+  margin-right: 2vh; }
+
+#titolo {
   display: block;
-  text-align: center; }
+  font-size: x-large; }
+
+#sottotitolo {
+  display: block;
+  text-align: center;
+  font-size: small; }
 
 #info {
   background-color: #fff;
-  flex: 1; }
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3vh;
+  box-sizing: border-box;
+  flex-direction: column;
+  /*
+    &::before {
+        content: "";
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 20px 20px 20px 0;
+        border-color: transparent #fff transparent transparent;
+        display: block;
+        position: relative;
+        left: -47vh;
+        z-index: 99;
+    }
+    */ }
   #info::before {
-    content: "";
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 20px 20px 20px 0;
-    border-color: transparent #fff transparent transparent;
-    display: block;
-    position: relative;
-    left: -20px;
-    z-index: 99;
-    top: 25vh; }
+    background-image: url("../img/arrow.png") no-repeat fixed; }
+  #info p {
+    text-align: center; }
+  #info #orari01 {
+    color: #17a6b6; }
+  #info #orari02 {
+    color: #117d89; }
+  #info #orari03 {
+    color: #062a2e; }
+  #info .medico {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 130%; }
 
 .colonna {
   width: 33vw;
@@ -67,11 +105,11 @@ body {
   align-items: center;
   justify-content: center; }
 
-#studio01 {
-  background-color: #FC4349; }
+#ambulatorio01 {
+  background-color: #17a6b6; }
 
-#studio02 {
-  background-color: #a30308; }
+#ambulatorio02 {
+  background-color: #117d89; }
 
-#studio03 {
-  background-color: #710205; }
+#ambulatorio03 {
+  background-color: #0c535b; }

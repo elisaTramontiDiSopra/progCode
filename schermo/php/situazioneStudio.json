@@ -1,0 +1,19 @@
+{   
+    "studio": {
+        "titolo": "Studio medico associato",
+        "sottotitolo": "Dr Cox, Dr. Dorian, Dr. Turk",
+        "orari":"<div id='orari01'><p><span class='medico'> Dr Turk</span> <br /> dalle 10.00 alle 12.00 e dalle 15.00 alle 17.00</p></div><div id='orari02'><p><span class='medico'>Dr Cox</span> <br /> dalle 10.00 alle 12.00 e dalle 15.00 alle 17.00</p></div><div id='orari03'><p><span class='medico'> Dr Dorian</span> <br /> dalle 10.00 alle 12.00 e dalle 15.00 alle 17.00</p></div>",
+        "ambulatorio01": {
+            "medico": "Dottor Dorian",
+            "ambulatorio": "3"
+        },        
+        "ambulatorio02": {
+            "medico": "Dottor Turk",
+            "ambulatorio": "1"
+        },       
+        "ambulatorio03": {
+            "medico": "Dottor Cox",
+            "ambulatorio": "2"
+        }
+    }
+}

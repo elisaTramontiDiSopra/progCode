@@ -32,7 +32,7 @@ function getJsonCode() {
   })
 }
 
-
+/*
 function getCode() {
   console.log('get code iniziato');
   richiestaCode = new XMLHttpRequest();
@@ -41,6 +41,13 @@ function getCode() {
   rispostaJSON = richiestaCode.responseText;
   console.log('rispostaJSON');
 }
+*/
+
+
+
+
+
+
 
 /*
 var oReq = new XMLHttpRequest(); //New request object
