@@ -1,6 +1,10 @@
 var gulp = require ('gulp');
 var sass = require('gulp-sass');
 var browserSync = require('browser-sync').create();
+//var autoprefixer = require('gulp-autoprefixer');
+//var minifycss = require('gulp-minify-css');
+//var rename = require('gulp-rename');
+
 
 /* 'sass' è il nome del task che va richiamato quando si compila con gulp sass */
 gulp.task('sass', function() {
