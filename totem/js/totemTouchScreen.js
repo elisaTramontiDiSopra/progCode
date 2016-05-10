@@ -1,6 +1,18 @@
-//connect to db
-
-//
+    
+function aggiornoNumeroCodaEStampa() {
+    var datetime = getDataOdierna()
+    var ambulatorio = targetElement.getAttribute("data-value");
+    var url = "php/controllaCoda.php?ambulatorio="+ambulatorio+"data"+datetime;
+  
+  
+  fetch(url).then(function(response) {
+    return response.json();
+  }).then(function(data) {
+    console.log(data);
+  }).catch(function(err) {
+      console.log ('ERRORE ', err);
+  })
+}
 
 function recuperoUltimoNumeroCoda(targetElement) {
     studio = targetElement.getAttribute("data-value");
@@ -26,6 +38,13 @@ function loadDoc() {
   xhttp.send();
 }
 
+
+
+function getDataOdierna() {
+    var currentdate = new Date();
+    var datetime = currentdate.getDay() +currentdate.getMonth() + currentdate.getFullYear();
+    return datetime;
+}
 
 
 

@@ -1,8 +1,29 @@
+html, body {
+  height: 100vh;
+  width: 100vw; }
+
 body {
-  background: #17a6b6; }
+  background: #353334; }
 
 #studioContainer {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column; }
+  flex-direction: column;
+  height: 100vh; }
+
+.ambulatorio, #ambulatorio01, #ambulatorio02, #ambulatorio03 {
+  height: 30vh;
+  width: 50vw;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+#ambulatorio01 {
+  background-color: #17a6b6; }
+
+#ambulatorio02 {
+  background-color: #117d89; }
+
+#ambulatorio03 {
+  background-color: #0c535b; }
