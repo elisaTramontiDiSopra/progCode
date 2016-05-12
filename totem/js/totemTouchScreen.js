@@ -4,16 +4,67 @@ function aggiornoNumeroCodaEStampa(targetElement) {
     var datetime = '05052016';
     var ambulatorio = targetElement.getAttribute("data-value");
     console.log ('datetime: ', datetime, ' ambulatorio: ', ambulatorio);
+    var url = "php/updateCoda.php?ambulatorio="+ambulatorio+"&data"+datetime;
+    fetch(url).then(function(response) {
+        if (response.status !== 200) {  
+            console.log('Problema: ', response.status);  
+            return;  
+        } else {
+            console.log('prima funzione');
+            return response.text();
+        };
+    }).then(function(risposta) {
+        console.log('data ', risposta);
+        //console.log('sono nella seconda funzione');
+        //console.log(data.json());
+    }).catch(function(err) {
+        console.log ('ERRORE ', err);
+    })
+} 
+ 
+ 
+ 
+/* 
+    
+function aggiornoNumeroCodaEStampa(targetElement) {
+    //var datetime = getDataOdierna()
+    var datetime = '05052016';
+    var ambulatorio = targetElement.getAttribute("data-value");
+    console.log ('datetime: ', datetime, ' ambulatorio: ', ambulatorio);
     var url = "php/controllaCoda.php?ambulatorio="+ambulatorio+"&data"+datetime;
     fetch(url).then(function(response) {
-        console.log('una roba a caso');
-        return response.json();
-    }).then(function(data) {
-        console.log(data);
+        if (response.status !== 200) {  
+            console.log('Problema: ', response.status);  
+            return;  
+        } else {
+            console.log('prima funzione');
+            return response.text();
+        };
+    }).then(function(risposta) {
+        console.log('data ', risposta);
+        //console.log('sono nella seconda funzione');
+        //console.log(data.json());
     }).catch(function(err) {
         console.log ('ERRORE ', err);
     })
 }
+
+*/
+
+function status(response) {  
+  if (response.status >= 200 && response.status < 300) {  
+      console.log('sono dentro status function')
+    return Promise.resolve(response)  
+  } else {  
+    return Promise.reject(new Error(response.statusText))  
+  }  
+}
+
+function json(response) {  
+    console.log('sono dentro json function')
+  return response.text()  
+}
+
 
 function recuperoUltimoNumeroCoda(targetElement) {
     studio = targetElement.getAttribute("data-value");
