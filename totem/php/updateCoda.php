@@ -5,7 +5,7 @@
    $data = '05052016';
    $ambulatorio = $_GET['ambulatorio'];
 
-   $sql = "UPDATE ".$studio." SET ultimoNumeroPrenotato=ultimoNumeroPrenotato+1 WHERE ambulatorio='".$ambulatorio." AND data ='".$data."'";    
+   $sql = "UPDATE ".$studio." SET ultimoNumeroPrenotato=ultimoNumeroPrenotato+1 WHERE ambulatorio='".$ambulatorio."'";    
    $incrementaCoda = mysqli_query($conn, $sql);  
    
    $selectNumeroDaStampare = "SELECT ultimoNumeroPrenotato FROM ".$studio." WHERE ambulatorio='".$ambulatorio."'";
@@ -14,7 +14,7 @@
       die('CASINI CON MYSQL: ' . mysql_error());
    }  
     while($row = mysqli_fetch_array($selezionaUltimoNumero, MYSQLI_ASSOC)){
-        $arrayJSON[] = $row;
+        $arrayJSON = $row;
     }
     //header('Content-Type: application/json');
     echo json_encode($arrayJSON, JSON_PRETTY_PRINT); 
