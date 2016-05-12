@@ -1,17 +1,18 @@
     
-function aggiornoNumeroCodaEStampa() {
-    var datetime = getDataOdierna()
+function aggiornoNumeroCodaEStampa(targetElement) {
+    //var datetime = getDataOdierna()
+    var datetime = '05052016';
     var ambulatorio = targetElement.getAttribute("data-value");
-    var url = "php/controllaCoda.php?ambulatorio="+ambulatorio+"data"+datetime;
-  
-  
-  fetch(url).then(function(response) {
-    return response.json();
-  }).then(function(data) {
-    console.log(data);
-  }).catch(function(err) {
-      console.log ('ERRORE ', err);
-  })
+    console.log ('datetime: ', datetime, ' ambulatorio: ', ambulatorio);
+    var url = "php/controllaCoda.php?ambulatorio="+ambulatorio+"&data"+datetime;
+    fetch(url).then(function(response) {
+        console.log('una roba a caso');
+        return response.json();
+    }).then(function(data) {
+        console.log(data);
+    }).catch(function(err) {
+        console.log ('ERRORE ', err);
+    })
 }
 
 function recuperoUltimoNumeroCoda(targetElement) {
@@ -42,7 +43,7 @@ function loadDoc() {
 
 function getDataOdierna() {
     var currentdate = new Date();
-    var datetime = currentdate.getDay() +currentdate.getMonth() + currentdate.getFullYear();
+    var datetime = currentdate.getDate().toString() +(currentdate.getMonth()+1).toString() + currentdate.getFullYear().toString();
     return datetime;
 }
 

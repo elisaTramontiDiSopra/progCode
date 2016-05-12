@@ -5,7 +5,7 @@
    $data = '05052016';
    $ambulatorio = $_GET['ambulatorio'];
 
-   $sql = "UPDATE ".$studio." SET ultimoNumeroPrenotato=ultimoNumeroPrenotato+1 WHERE data='".$data." AND ambulatorio='".$ambulatorio."'";    
+   $sql = "UPDATE ".$studio." SET ultimoNumeroPrenotato=ultimoNumeroPrenotato+1 WHERE ambulatorio='".$ambulatorio."'";    
    $incrementaCoda = mysqli_query($conn, $sql);  
    if ($incrementaCoda === TRUE) {
        //echo "Update ultimoNumeroPrenotato OK <br>";
@@ -18,12 +18,21 @@
     }  
    */
    
-   $selectNumeroDaStampare = "SELECT ultimoNumeroPrenotato FROM ".$studio." WHERE data='".$data." AND ambulatorio='".$ambulatorio."'";
+   $selectNumeroDaStampare = "SELECT ultimoNumeroPrenotato FROM ".$studio." WHERE ambulatorio='".$ambulatorio."'";
    $selezionaUltimoNumero = mysqli_query($conn, $selectNumeroDaStampare);  
-   while ($row = $selezionaUltimoNumero->fetch_assoc()) {
-        echo '{"ultimoNumeroPrenotato": "'.$row['ultimoNumeroPrenotato'].'"}';
-    }    
-   
-    mysqli_close($conn);
+    while($row = mysqli_fetch_array($selezionaUltimoNumero, MYSQLI_ASSOC)){
+        $arrayJSON = $row;
+    }
+    echo json_encode($arrayJSON, JSON_PRETTY_PRINT); 
+    mysqli_close($conn); 
+
+    $codaAmbulatorio = "codaAmbulatorio".$ambulatorio.".json";
+    //write json data into data.json file
+	if(file_put_contents($codaAmbulatorio, $arrayJSON)) {
+        //echo 'Dati salvati';
+	}
+	else {
+        echo "error";
+    }
 
 ?>

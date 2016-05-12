@@ -6,6 +6,12 @@
         
         <link href="css/totemTreAmbulatori.css" rel="stylesheet" type="text/css" />
       
+        <!-- PRINTING -->      
+        <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui-1.8.18.custom.min.js"></script>
+        <script src="js/print.js"></script>
+        <!-- PRINTING -->  
+        
         <script src="js/totemTouchScreen.js"></script>
        
     </head>
@@ -13,18 +19,18 @@
 <body>
 <div id="studioContainer">
     
-    <div id="ambulatorio01" data-value="1" onclick="recuperoUltimoNumeroCoda(this)">
+    <div id="ambulatorio01" data-value="1" onclick="aggiornoNumeroCodaEStampa(this)">
         <div class="prendiNumero">Prendi il numero</div>
         <div class="studioPrenotazione"></div>  
         <div class="info"></div>      
     </div>
     
-    <div id="ambulatorio02" class="colonnaStudio" data-value="2" onclick="recuperoUltimoNumeroCoda(this)">
+    <div id="ambulatorio02" class="colonnaStudio" data-value="2" onclick="aggiornoNumeroCodaEStampa(this)">
         <div class="prendiNumero">Prendi il numero</div>
         <div class="studioPrenotazione"></div>        
     </div>
     
-    <div id="ambulatorio03" class="colonnaStudio" data-value="3" onclick="recuperoUltimoNumeroCoda(this)">
+    <div id="ambulatorio03" class="colonnaStudio" data-value="3" onclick="aggiornoNumeroCodaEStampa(this)">
         <div class="prendiNumero">Prendi il numero</div>       
     </div>
     
