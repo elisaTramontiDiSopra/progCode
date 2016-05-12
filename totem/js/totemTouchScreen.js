@@ -15,6 +15,7 @@ function aggiornoNumeroCodaEStampa(targetElement) {
         };
     }).then(function(risposta) {
         console.log('data ', risposta);
+        inviaNumeroInStampa(risposta);
         //console.log('sono nella seconda funzione');
         //console.log(data.json());
     }).catch(function(err) {
