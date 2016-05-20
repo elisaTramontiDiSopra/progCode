@@ -2,6 +2,7 @@
 
     require_once "../../connection.php"; 
     
+    $indirizzoServer = 'C://wamp//www//digitalSigneage//';
     $studio = $_GET['studio']; 
     $ambulatorio = $_GET['ambulatorio']; 
    
@@ -17,7 +18,21 @@
     while($row = mysqli_fetch_array($selezionaServito, MYSQLI_ASSOC)){
         $arrayJSON = $row;
     }
-    echo json_encode($arrayJSON, JSON_PRETTY_PRINT);    
+    echo json_encode($arrayJSON, JSON_PRETTY_PRINT);   
+    
+    $servitoAmbulatorio = $indirizzoServer."json//servitoAmbulatorio".$ambulatorio.".json";
+    //write json data into data.json file
+	if(file_put_contents($servitoAmbulatorio, json_encode($arrayJSON, JSON_PRETTY_PRINT))) {
+        //echo 'Dati salvati';
+	}
+	else {
+        echo "error";
+    }
+    
+    
+    
+    
+     
     // FINE AGGIORNO IL DATO MYSQL 
       
 
@@ -66,3 +81,6 @@ curl_close($ch);
 
 //echo $result;
 ?>
+
+
+    

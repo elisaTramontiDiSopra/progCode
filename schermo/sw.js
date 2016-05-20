@@ -10,7 +10,7 @@ self.addEventListener('activate', function(event) {
 });
 self.addEventListener('push', function(event) {  
   console.log('Push message', event);
-  getJsonCode();
+  aggiornaCode();
   var title = 'La coda sta avanzando';
   event.waitUntil(
     self.registration.showNotification(title, {
@@ -21,21 +21,35 @@ self.addEventListener('push', function(event) {
   );
 })
 
-/*
-{
-    "1": {
-        "numeroServito": "5",
-        "medico": "Dottor Dorian"
-    },
-    "2": {
-        "numeroServito": "8",
-        "medico": "Dottor Cox"
-    },
-    "3": {
-        "numeroServito": "15",
-        "medico": "Dottor Turk"
-    }
-}*/
+
+
+
+
+function aggiornaCode() {
+  console.log('getJSON CODE FUNCTION STARTED')
+  var url='php/recuperaCoda.php';
+  fetch(url).then(function(response) {
+    return response.json();
+  }).then(function(data) {
+    console.log(data);
+    aggiornaSchermo(data);
+  }).catch(function(err) {
+      console.log ('ERRORE ', err);
+  })
+}
+
+
+
+function aggiornaSchermo(dataJSON) {
+    document.getElementById("servito01").innerHTML = dataJSON['1']['numeroServito'];
+    document.getElementById("servito02").innerHTML = dataJSON['2']['numeroServito'];
+    document.getElementById("servito03").innerHTML = dataJSON['3']['numeroServito'];
+}
+
+
+
+
+
 
 /*
 function getJsonCode() {
