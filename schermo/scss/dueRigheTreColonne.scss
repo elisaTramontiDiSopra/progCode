@@ -116,10 +116,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 1vh;
 }
 
 #ambulatorio01{
     background-color: $colorePrimario;
+    @extend .backgroundCover;
+    background-image: url("../img/studioUno.png");
 }
 
 #ambulatorio02{

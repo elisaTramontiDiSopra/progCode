@@ -5,6 +5,7 @@ $sfondoColonna: #D6DADB;
 $coloreTestoIntestazioneColonne:#fff;
 
 $colorePrimario: #17a6b6;
+$colorePrimarioScuro: darken($colorePrimario, 10%);
 $coloreSfondo: #353334;
 
 html, body {
@@ -12,4 +13,14 @@ html, body {
     width: 100vw;
     margin: 0 !important;
     padding: 0 !important;
+}
+
+.flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.backgroundCover {
+    background-size: cover;
+    background-position: center;
 }

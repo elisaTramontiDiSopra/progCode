@@ -20,17 +20,57 @@ self.addEventListener('push', function(event) {
     })
   );
 })
-    
+
+
+/* RECUPERO DATI DAL JSON GENERALE */
+function getJsonCode() {
+  console.log('getJSON COVE FUNCTION STARTED')
+  var url='../php/situazioneCode.json';
+  fetch(url).then(function(response) {
+    return response.json();
+  }).then(function(data) {
+    console.log(data);
+    aggiornaSchermo(data);
+  }).catch(function(err) {
+      console.log ('ERRORE ', err);
+  })
+}
+
+function aggiornaSchermo(dataJSON) {
+    document.getElementById("servito01").innerHTML = dataJSON[0].numeroServito;
+}
+
+getJsonCode();
+/*
+{
+    "1": {
+        "numeroServito": "5",
+        "medico": "Dottor Dorian"
+    },
+    "2": {
+        "numeroServito": "8",
+        "medico": "Dottor Cox"
+    },
+    "3": {
+        "numeroServito": "15",
+        "medico": "Dottor Turk"
+    }
+}*/
+
+  /*  
 function getJsonCode() {
   var url='php/situazioneCode.json';
   fetch(url).then(function(response) {
     return response.json();
   }).then(function(data) {
+    aggiornaLoSchermo(data);
     console.log(data);
   }).catch(function(err) {
       console.log ('ERRORE ', err);
   })
 }
+*/
+
 
 /*
 function getCode() {

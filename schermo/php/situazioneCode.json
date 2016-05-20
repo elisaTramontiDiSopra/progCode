@@ -1,13 +1,13 @@
 {
-    "1": {
+    "studio01": {
         "numeroServito": "5",
         "medico": "Dottor Dorian"
     },
-    "2": {
+    "studio02": {
         "numeroServito": "8",
         "medico": "Dottor Cox"
     },
-    "3": {
+    "studio03": {
         "numeroServito": "15",
         "medico": "Dottor Turk"
     }

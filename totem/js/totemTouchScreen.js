@@ -16,6 +16,7 @@ function aggiornoNumeroCodaEStampa(targetElement) {
     }).then(function(risposta) {
         var numeroDaStampare = risposta.ultimoNumeroPrenotato;
         console.log(numeroDaStampare);
+        aggiornaNumeroSulTicket(numeroDaStampare);
         inviaNumeroInStampa(numeroDaStampare);
         //console.log(data.json());
     }).catch(function(err) {
@@ -36,7 +37,7 @@ function recuperoUltimoNumeroCoda(targetElement) {
     var ultimoNumeroPrenotato = xmlhttp.responseText;
     console.log(ultimoNumeroPrenotato);
 }
-
+/*
 function loadDoc() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -54,12 +55,39 @@ function getDataOdierna() {
     return datetime;
 }
 
+function aggiornaNumeroSulTicket(numeroDaStampare) {
+    console.log('aggiorno ticket');
+    var numeroDaStampareTicket = document.getElementById('numeroDaStampareTicket');
+    numeroDaStampareTicket.innerHTML = numeroDaStampare;
+}
 
+''*/
 function inviaNumeroInStampa() {
     console.log('stampa');
-    var ticketTemplate = document.getElementById('ticketTemplate');
+    var ticketTemplate = document.getElementById('ticketTemplate').innerHTML;
     var tuttaLaPagina = document.body.innerHTML;
     document.body.innerHTML = ticketTemplate;
     window.print();
     document.body.innerHTML = tuttaLaPagina;
 }
+
+
+/* RECUPERO DATI DAL JSON GENERALE */
+function getStudioData() {
+  var url='../situazioneStudio.json';
+  fetch(url).then(function(response) {
+    return response.json();
+  }).then(function(data) {
+    putStudioData(data);
+  }).catch(function(err) {
+      console.log ('ERRORE ', err);
+  })
+}
+
+function putStudioData(dataJSON) {
+    document.getElementById("info01").innerHTML = dataJSON.studio.ambulatorio01.medico;
+    document.getElementById("info02").innerHTML = dataJSON.studio.ambulatorio02.medico;
+    document.getElementById("info03").innerHTML = dataJSON.studio.ambulatorio03.medico;
+}
+
+getStudioData();

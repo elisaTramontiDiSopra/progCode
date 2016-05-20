@@ -1,29 +1,69 @@
 html, body {
   height: 100vh;
-  width: 100vw; }
+  width: 100vw;
+  margin: 0 !important;
+  padding: 0 !important; }
+
+.flexCenter, .ambulatorio, #ambulatorio01, #ambulatorio02, #ambulatorio03, .info, .prendiNumero {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.backgroundCover, #ambulatorio01, #ambulatorio02, #ambulatorio03 {
+  background-size: cover;
+  background-position: center; }
+
+html, body {
+  width: auto; }
 
 body {
-  background: #353334; }
+  background: #353334;
+  margin: 0 !important;
+  padding: 0 !important; }
 
 #studioContainer {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
   height: 100vh; }
 
 .ambulatorio, #ambulatorio01, #ambulatorio02, #ambulatorio03 {
-  height: 30vh;
+  height: 80vh;
   width: 50vw;
-  display: flex;
-  align-items: center;
-  justify-content: center; }
+  margin: 0 10px;
+  flex-direction: column; }
+
+.info {
+  background-color: rgba(17, 125, 137, 0.5);
+  width: 100%;
+  height: 10vh;
+  font-size: 120%;
+  text-transform: uppercase;
+  color: white;
+  font-family: sans-serif; }
+
+.filler {
+  height: 50vh; }
+
+.prendiNumero {
+  color: #17a6b6;
+  font-size: 180%;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  height: 30vh;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  width: 100%; }
 
 #ambulatorio01 {
-  background-color: #17a6b6; }
+  background-color: #17a6b6;
+  background-image: url("../img/studioUno.png"); }
 
 #ambulatorio02 {
-  background-color: #117d89; }
+  background-color: #117d89;
+  background-image: url("../img/studioDue.jpg"); }
 
 #ambulatorio03 {
-  background-color: #0c535b; }
+  background-color: #0c535b;
+  background-image: url("../img/studioTre.jpg"); }

@@ -1,0 +1,29 @@
+@media print {
+      
+    body { background:white; color:black; margin:0 }
+    
+    img {margin: 0 auto;}
+    
+    #ticketTemplate{
+         /*display: none;*/
+         position:absolute;
+         height:300px;
+         top:50%;
+         left:50%;
+         margin:-50% 0 0 -50%;
+         text-align: center;
+         font-weight: bold;
+    }
+
+    #numeroDaStampareTicket {
+        font-size: 40pt;
+        margin-bottom: 100px;
+    }
+    
+    .center {
+        text-align: center;
+    }
+    .spacer{
+        height: 100px;
+    }
+}

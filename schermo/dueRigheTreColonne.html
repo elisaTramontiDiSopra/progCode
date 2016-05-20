@@ -9,7 +9,7 @@
         <link rel="manifest" href="manifest.json">
         
         <script src="variabili.js"></script>
-        <script src="js/getStudioData.js"></script>
+        <script src="js/getInitialStudioData.js"></script>
         
         <!-- PUSH NOTIFICATIONS -->
         <script src="js/main.js"></script> <!-- SEND REGISTRATION ID TO DATABASE -->   
@@ -38,9 +38,29 @@
     </div>
     
     <div id="rigaInferiore" class="riga">
-        <div id="ambulatorio01" class="colonna"></div>
-        <div id="ambulatorio02" class="colonna">1</div>
-        <div id="ambulatorio03" class="colonna">1</div>
+        <div id="ambulatorio01" class="colonna">
+            <div class="info" id="info02"></div>
+            <div>
+                <p>Stiamo servendo il numero</p>
+                <p id='servito01' class="numeroServito"></p>
+            </div> 
+        </div>
+        
+        <div id="ambulatorio02" class="colonna">
+            <div class="info" id="info01"></div>
+            <div>
+                <p>Stiamo servendo il numero</p>
+                <p id='servito02' class="numeroServito"></p>
+            </div>
+        </div>
+        
+        <div id="ambulatorio03" class="colonna">
+            <div class="info" id="info03"></div>
+            <div>
+                <p>Stiamo servendo il numero</p>
+                <p id='servito03' class="numeroServito"></p>
+            </div>    
+        </div>
     </div>
 
     

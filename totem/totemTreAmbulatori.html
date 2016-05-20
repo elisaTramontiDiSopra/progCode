@@ -5,7 +5,7 @@
         <title>Totem</title>
         
         <link href="css/totemTreAmbulatori.css" rel="stylesheet" type="text/css" />
-      
+        <link href="css/printTicket.css" rel="stylesheet" type="text/css" media="print"/>
         <!-- PRINTING -->      
         <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
         <script type="text/javascript" src="js/jquery-ui-1.8.18.custom.min.js"></script>
@@ -22,18 +22,21 @@
 <div id="studioContainer">
     
     <div id="ambulatorio01" data-value="1" onclick="aggiornoNumeroCodaEStampa(this)">
-        <div class="prendiNumero">Prendi il numero</div>
-        <div class="studioPrenotazione"></div>  
-        <div class="info"></div>      
+        <div class="info" id="info01"></div>
+        <div class="filler"></div>
+        <div class="prendiNumero"><p>Prendi il numero</p></div>  
     </div>
     
     <div id="ambulatorio02" class="colonnaStudio" data-value="2" onclick="aggiornoNumeroCodaEStampa(this)">
-        <div class="prendiNumero">Prendi il numero</div>
-        <div class="studioPrenotazione"></div>        
+        <div class="info" id="info02"></div> 
+        <div class="filler"></div>
+        <div class="prendiNumero"><p>Prendi il numero</p></div>       
     </div>
     
     <div id="ambulatorio03" class="colonnaStudio" data-value="3" onclick="aggiornoNumeroCodaEStampa(this)">
-        <div class="prendiNumero">Prendi il numero</div>       
+        <div class="info" id="info03"></div>
+        <div class="filler"></div> 
+        <div class="prendiNumero"><p>Prendi il numero</p></div>       
     </div>
     
 </div>
@@ -42,14 +45,17 @@
 <!-- TICKET TEMPLATE -->
 <button onclick="inviaNumeroInStampa()"></button>
 
+
 <div id="ticketTemplate">
-    <div id="logoTicket"></div>
+    <div id="logoTicket">
+        <img class="center" src="img/logoTest.png" alt="logo" width="100px" height="100px"/>
+    </div>
     <div id="testoTicket">
-        <p>NUMERO</p>
-        <p id="numeroCorrenteTicket">PRINT TEST</p>
+        <p class="center">SEI IL NUMERO</p>
+        <p id="numeroDaStampareTicket" class="center">28</p>
+        <p><br />&nbsp</p>
     </div>
 </div>
-
 
 
 

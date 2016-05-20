@@ -15,6 +15,7 @@
    }  
     while($row = mysqli_fetch_array($selezionaUltimoNumero, MYSQLI_ASSOC)){
         $arrayJSON = $row;
+        echo $arrayJSON;
     }
     //header('Content-Type: application/json');
     echo json_encode($arrayJSON, JSON_PRETTY_PRINT); 
