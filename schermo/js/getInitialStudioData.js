@@ -5,7 +5,7 @@ function getStudioData() {
   }).then(function(data) {
     putStudioData(data);
   }).catch(function(err) {
-      console.log ('ERRORE ', err);
+      console.log ('ERRORE NEL RECUPERO DATI STUDIO', err);
   })
 }
 
@@ -15,24 +15,11 @@ function putStudioData(dataJSON) {
     document.getElementById("info").innerHTML = dataJSON.studio.orari;
 }
 
-//PRENDI DATI CODA INIZIALI
-/* RECUPERO DATI DAL JSON GENERALE */
-/*
-QUESTA E' LA FUNZIONE CON IL JSON 
-
-function getJsonCode() {
-  console.log('getJSON CODE FUNCTION STARTED')
-  var url='php/situazioneCode.json';
-  fetch(url).then(function(response) {
-    return response.json();
-  }).then(function(data) {
-    console.log(data);
-    aggiornaSchermo(data);
-  }).catch(function(err) {
-      console.log ('ERRORE ', err);
-  })
+function controllaCode() {
+    console.log('Repeat funzione');
+    getJsonCode();
+    setTimeout(controllaCode(), 5000);
 }
-*/
 
 // FUNZIONE CON PHP
 function getJsonCode() {
@@ -48,8 +35,6 @@ function getJsonCode() {
   })
 }
 
-
-
 function aggiornaSchermo(dataJSON) {
     document.getElementById("servito01").innerHTML = dataJSON['1']['numeroServito'];
     document.getElementById("servito02").innerHTML = dataJSON['2']['numeroServito'];
@@ -58,3 +43,4 @@ function aggiornaSchermo(dataJSON) {
 
 getJsonCode();
 getStudioData();
+controllaCode();

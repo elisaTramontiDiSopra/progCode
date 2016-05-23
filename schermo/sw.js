@@ -21,18 +21,16 @@ self.addEventListener('push', function(event) {
   );
 })
 
-
-
-
-
 function aggiornaCode() {
-  console.log('getJSON CODE FUNCTION STARTED')
   var url='php/recuperaCoda.php';
   fetch(url).then(function(response) {
     return response.json();
   }).then(function(data) {
     console.log(data);
-    aggiornaSchermo(data);
+    conesole.log('data.body', data.body);
+    var notificaArrivata = true;
+    console.log('cambio status notifica');
+    //aggiornaSchermoDue(data);
   }).catch(function(err) {
       console.log ('ERRORE ', err);
   })
@@ -40,14 +38,12 @@ function aggiornaCode() {
 
 
 
-function aggiornaSchermo(dataJSON) {
-    document.getElementById("servito01").innerHTML = dataJSON['1']['numeroServito'];
-    document.getElementById("servito02").innerHTML = dataJSON['2']['numeroServito'];
-    document.getElementById("servito03").innerHTML = dataJSON['3']['numeroServito'];
+function aggiornaSchermoDue(dataJSON) {
+    window.document.getElementById("servito01").innerHTML = dataJSON['1']['numeroServito'];
+    console.log('numero servito 01: ', dataJSON['1']['numeroServito']);
+    //document.getElementById("servito02").innerHTML = dataJSON['2']['numeroServito'];
+    //document.getElementById("servito03").innerHTML = dataJSON['3']['numeroServito'];
 }
-
-
-
 
 
 
@@ -76,22 +72,3 @@ function getCode() {
   console.log('rispostaJSON');
 }
 */
-
-
-
-
-
-
-      
-function checkStatus (response) {
-  if (response.status === 200) {
-    return Promise.resolve(response);
-  }else {
-    return Promise.reject(
-      new Error (response.statusText));
-  }
-}      
-
-function getJSON(response){
-  return response.json();
-}

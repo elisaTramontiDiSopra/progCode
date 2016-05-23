@@ -1,8 +1,6 @@
 <?php
    require_once "connection.php";
    
-   //$conn = new mysqli($dbhost, $dbuser, $dbpass);
-   
    $subscriptionID = $_GET['subscriptionID'];
    $nome_dispositivo = $_GET['nome_dispositivo'];
 

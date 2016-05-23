@@ -1,9 +1,3 @@
-//FUNZIONE SEMPLIFICATA
-function inviaNumeroInStampa(numeroDaStampare) {
-    
-}
-
-
 /*function inviaNumeroInStampa(numeroDaStampare){
     var ePosDev = new epson.ePOSDevice();
     var printer = null;
