@@ -18,17 +18,17 @@ function putStudioData(dataJSON) {
 function controllaCode() {
     console.log('Repeat funzione');
     getJsonCode();
-    setTimeout(controllaCode(), 5000);
+    setTimeout(controllaCode(), 15000);
 }
 
 // FUNZIONE CON PHP
 function getJsonCode() {
-  console.log('getJSON CODE FUNCTION STARTED')
+  //console.log('getJSON CODE FUNCTION STARTED')
   var url='php/recuperaCoda.php';
   fetch(url).then(function(response) {
     return response.json();
   }).then(function(data) {
-    console.log(data);
+    //console.log(data);
     aggiornaSchermo(data);
   }).catch(function(err) {
       console.log ('ERRORE ', err);
