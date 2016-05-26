@@ -23,11 +23,12 @@ if ('serviceWorker' in navigator) {
     }).catch(function(error) {
         console.log(':^(', error);
     });
-    //
+    //GESTIONE DEL MESSAGGIO CHE ARRIVA DAL SERVICE WORKER
     navigator.serviceWorker.addEventListener('message', function(event){
-        console.log(event);
-        console.log("Client 1 Received Message: " + event.data);
-        event.ports[0].postMessage("Client 1 Says 'Hello back!'");
+        //console.log(event);
+        //console.log("Client 1 Received Message: " + event.data);        
+        //event.ports[0].postMessage("Client 1 Says 'Hello back!'");
+        aggiornaValoriCodaNellaPagina(event.data);
     });
     //
 }
@@ -40,6 +41,16 @@ if('serviceWorker' in navigator){
         event.ports[0].postMessage("Client 1 Says 'Hello back!'");
     });
 }*/
+
+function aggiornaValoriCodaNellaPagina(messaggioArrivato) {
+    var arr = messaggioArrivato.split("::"); //estraggo i valori separati con :: e li metto in un array
+    console.log(arr[0]);
+    document.getElementById("servito01").innerHTML = arr[0];
+    document.getElementById("servito02").innerHTML = arr[1];
+    document.getElementById("servito03").innerHTML = arr[2];
+}
+
+
 
 
 
@@ -62,22 +73,3 @@ function send_message_to_sw(msg){
     });
 }
 // TODO
-
-function aggiornaCode() {
-  var url='php/recuperaCoda.php';
-  fetch(url).then(function(response) {
-    return response.json();
-  }).then(function(data) {
-    //console.log(data);
-    //var notificaArrivata = true;
-    //console.log('cambio status notifica');
-    //aggiornaSchermoDue(data);
-    var numeroServito01 = data['1']['numeroServito'];
-    console.log('numServ: ', numeroServito01);
-    //var numeroServito02 = dataJSON['2']['numeroServito'];
-    //var numeroServito03 = dataJSON['3']['numeroServito'];
-    return numeroServito01;
-  }).catch(function(err) {
-      console.log ('ERRORE ', err);
-  })
-}

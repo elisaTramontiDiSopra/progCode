@@ -38,7 +38,7 @@ function aggiornaCode() {
     var numeroServito01 = data['1']['numeroServito'];
     var numeroServito02 = data['2']['numeroServito'];
     var numeroServito03 = data['3']['numeroServito'];
-    var msg = "1:"+numeroServito01+" 2:"+numeroServito02+" 3:"+numeroServito03
+    var msg = numeroServito01+"::"+numeroServito02+"::"+numeroServito03
     send_message_to_all_clients(msg);
   }).catch(function(err) {
       console.log ('ERRORE ', err);
@@ -72,7 +72,7 @@ function send_message_to_client(client, msg){
             }
         };
 
-        client.postMessage("MESSAGGIO INVIATO DA funz interna: '"+msg+"'", [msg_chan.port2]);
+        client.postMessage(msg, [msg_chan.port2]);
     });
 };
 
