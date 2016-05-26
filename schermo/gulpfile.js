@@ -16,7 +16,7 @@ var useref = require('gulp-useref');
 var uglify = require('gulp-uglify');
 var gulpIf = require('gulp-if');
 var cssnano = require('gulp-cssnano');
-var imagemin = require('gulp-imagemin');
+//var imagemin = require('gulp-imagemin');
 
 var runSequence = require('run-sequence');
 
@@ -69,7 +69,7 @@ gulp.task('development', function (callback) {
 })
 
 gulp.task('optimize', function (callback) {
-  runSequence(['sass', 'useref', ],
+  runSequence(['sass', 'useref'],
     callback
   )
 })

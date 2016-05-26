@@ -43,4 +43,4 @@ function aggiornaSchermo(dataJSON) {
 
 getJsonCode();
 getStudioData();
-controllaCode();
+//controllaCode();
