@@ -10,12 +10,9 @@ self.addEventListener('activate', function(event) {
 });
 
 self.addEventListener('push', function(event) {  
-  //console.log('Push message', event);
-  aggiornaCode();
-  //console.log (numeroServito01);
-  //send_message_to_all_clients(numeroServito01);
-  var title = 'La coda sta avanzando';
+  aggiornaCode();  
   /* VISUALIZZAZIONE NOTIFICA
+  var title = 'La coda sta avanzando';
   event.waitUntil(
     self.registration.showNotification(title, {
       body: 'Il tuo turno si sta avvicinando',
@@ -47,19 +44,6 @@ function aggiornaCode() {
 }
 
 
-
-
-
-
-/*
-self.addEventListener('message', function(event){
-    console.log("SW Received Message: " + event.data);
-    event.ports[0].postMessage("SW Says 'Hello back!'");
-});
-*/
-//var client = 'dueRigheTreColonne.html';
-
-
 function send_message_to_client(client, msg){
     return new Promise(function(resolve, reject){
         var msg_chan = new MessageChannel();
@@ -83,17 +67,3 @@ function send_message_to_all_clients(msg){
         })
     })
 }
-
-
-
-
-
-
-/*
-function aggiornaSchermoDue(dataJSON) {
-    window.document.getElementById("servito01").innerHTML = dataJSON['1']['numeroServito'];
-    console.log('elemento html',window.document.getElementById("servito01"));
-    console.log('numero servito 01: ', dataJSON['1']['numeroServito']);
-    //document.getElementById("servito02").innerHTML = dataJSON['2']['numeroServito'];
-    //document.getElementById("servito03").innerHTML = dataJSON['3']['numeroServito'];
-}*/
